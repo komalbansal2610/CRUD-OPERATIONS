@@ -1,0 +1,183 @@
+*{
+    margin:0;
+    padding: 0;
+
+}
+.container-75 {
+    min-height: 100vh;
+    width:100vw;
+    background-image: linear-gradient(to bottom,rgba(230, 231, 231, 0.507),rgba(143, 144, 144, 0.110)); 
+    display: flex;
+    flex-direction: column;
+}
+
+#fbHeading{
+    height:10vh;
+    width:100vw;
+    color:#4267B2;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+}
+
+#signUpBlock{
+    height:85vh;
+    width:100vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signUpBox{
+    border:2px solid #ccc;
+    width:30vw;
+    height:77vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    background-color: white;
+    box-shadow: 2px 2px 15px 2px rgb(192, 186, 186) ;
+    border-radius :8px;
+}
+
+#headingBox{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom:20px;
+}
+
+hr{
+    width:100%;
+    color: rgb(60, 52, 52);
+    margin-bottom:3%;
+}
+
+form{
+    width:100%;
+}
+
+hr{
+    border-color: #ccc;
+}
+
+input{
+    padding:1%;
+}
+.divBorder{
+    border: 1px solid lightgray;
+    background-color: white;
+} 
+
+.date{ 
+    border-radius: 4px;
+    font-size: 16px; 
+    padding: 1%;
+    padding-left: 3%;
+}
+
+#date-dropdown-list,#month-dropdown-list,#year-dropdown-list{
+    display:none;
+}
+
+.dropdown-menu{
+    max-height:150px;
+    overflow-y: auto;
+    max-width:200px;
+    cursor: pointer;
+}
+
+#date,#month,#year{
+    cursor: pointer;
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+
+
+.gender{
+    display:flex;
+    justify-content: space-between;
+    /* padding:3px 3px 3px 3px ; */
+    padding: 1%;
+    border-radius: 4px;
+}
+
+p {
+    font-size: 11px;
+    color: #2c3138;
+}
+
+button {
+    border: none;
+    border-radius: 4px;
+    cursor:pointer;
+    font-size: 18px;
+}
+
+#signUp{
+    background-color:rgb(5, 170, 5);
+    color:white;
+    width:50%;
+    height:8%;
+    margin: auto;
+    
+}
+
+#account{
+    color:rgb(0, 64, 255);
+    background-color:white;
+}
+
+.container-25 {
+    height: 23vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    background-color: white;
+}
+i{
+    font-size: 12px;
+    background-color: white;
+
+}
+
+#first-name-message{
+    display:none;
+    background-color: maroon;
+    color:white;
+    width: 150px;
+    padding: 5px;
+    position:absolute;
+    right:104%;
+    top:0%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* #dobMessage,#genderMessage{
+    /* position: absolute;
+    top: 0;
+    right: 100%;
+    width: 400px;
+    padding: 6px; */
+    /* background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    background-color: white; */
+/* } */ 
+
+@media only screen and (max-width: 1024px){
+    #signUpBlock{
+        height:120vh;
+    }
+    #signUpBox {
+        width: 87vw;
+        height:105vh;
+    }
+
+}

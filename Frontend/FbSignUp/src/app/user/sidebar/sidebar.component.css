@@ -1,0 +1,44 @@
+::ng-deep .p-sidebar{
+    background-color: black;
+    /* width:20% !important; */
+    }
+
+    .body{
+        /* border:2px solid red; */
+        margin-top: 10%;
+    }
+    
+    .elements{
+        height:60px;
+        text-align: center;
+        padding-top:5%;
+        font-size: 18px;
+        cursor: pointer;
+        color:white;
+        display: flex;
+        justify-content: space-around;
+    }
+    .elements:hover{
+        background-color: rgb(135, 165, 235);
+    }
+    .offcanvas-icon{
+        position: relative;
+        left:3%; 
+         font-size: 20px;
+        color:white !important;
+        background-color: black !important;
+        border: none;
+    }
+    
+
+    .head{
+        padding-top: 7%;
+    }
+    #leftScreen{
+        top:0;
+        height:100vh;
+        width:100vw;
+        background-color:rgba(16, 16, 16, 0.135) !important;
+        position:absolute;
+        z-index: 1000 !important;
+    }

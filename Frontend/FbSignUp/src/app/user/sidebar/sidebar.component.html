@@ -1,0 +1,21 @@
+
+    <p-sidebar [(visible)]="sidebarVisible">
+    <ng-template pTemplate="headless">
+
+            <div class="head " >
+                <button (click)="closeSidebar()" class="offcanvas-icon"><i  class="fa-solid fa-bars"></i></button>
+            </div>
+        <div class="body">
+        <div class="elements" (click)="onCustomer()"><i class="fa-solid fa-users elements-icons"></i>Customer</div>  
+        <div class="elements"><i class="fa-brands fa-magento elements-icons"></i>Agent</div>
+        <div class="elements"><i class="fa-solid fa-user elements-icons"></i>Admin</div>
+        <div class="elements" (click)="onDashboard()"><i class="fa-solid fa-user elements-icons"></i>Dashboard</div>
+    </div>
+    </ng-template>
+
+
+    </p-sidebar>
+
+
+    <p-button (click)="openSidebar()" class="offcanvas-icon"><i class="fa-solid fa-bars"></i></p-button>
+    <div id="leftScreen" (click)="sidebarVisible=false" *ngIf="sidebarVisible"></div>

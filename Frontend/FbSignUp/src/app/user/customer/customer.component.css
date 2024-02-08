@@ -1,0 +1,104 @@
+
+ #container{
+    padding:0;
+} 
+#navbar{
+    width:100vw;
+    height:70px;
+    background-color: black !important;
+    display:flex;
+}
+#customerHeading{
+    color:white;
+    position: relative;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    align-items: center;
+}  
+
+#addCustomer{
+    background-color:white;
+    color:black;
+    /* border:2px solid red; */
+    border-radius: 45px;
+    position: relative;
+    right:10%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border:none;
+}
+
+#offcanvas-icon{
+    position: relative;
+    left:3%;
+    font-size: 20px;
+    color:white;
+    background-color: black;
+    border: none;
+}
+
+/* body */
+
+#below-navbar{
+    height:70px;
+    width:100vw;
+}
+
+#tablebody{
+    /* border:2px solid red; */
+    padding-top:1%;
+    padding-right:2%;
+    padding-left:2%;
+}
+#backtable{
+    background-color: rgba(172, 134, 131, 0.1);
+    height:82vh;
+}
+#actionicon{
+    font-size: large;
+    background-color: white !important;
+    color:black;
+}
+::ng-deep .p-button {
+    background-color: white !important;
+    border:none !important;
+
+}
+.actionMsg{
+    display:flex;
+    flex-direction: column; 
+    border: 1px solid lightslategray; 
+    border-radius: 4px;
+    background-color: white;
+    padding:5px 10px;
+}
+
+p-overlaypanel{
+    display:none;
+}
+    
+
+.deleteCustomer{
+    color:black;
+    background-color: white !important;
+    border:none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+.deleteCustomer:hover{
+    color:blue;
+}
+
+.invalid{
+    background-color: rgb(5, 169, 70);
+    display: flex;
+    justify-content: center;
+    right: 0.5%;
+    top: 90%;
+    height:max-content;
+    width:20%;
+    position:absolute;
+    color:white;
+    font-size: 20px;
+}
+
+

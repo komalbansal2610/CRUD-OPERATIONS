@@ -1,0 +1,86 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class=" col-12 container-75 ">
+            <div id="fbHeading"><b>facebook</b></div>
+            <div id="signUpBlock">
+                <div id="signUpBox" class="">
+                    <div id="headingBox">
+                        <h4>Create a new account</h4>
+                        <h5> it's quick and easy</h5>
+                    </div>
+                    <hr>
+                    <form class="row row-gap-2 " [formGroup]="signUpForm" >
+                        <div class="col-6 ">
+                          <input type="text" class="form-control" id="firstName" placeholder="First Name" name="firstName"  formControlName="firstName" [class.is-invalid]="firstName.invalid && firstName.touched" >
+                        
+                        </div>
+                        <div class="col-6  ">
+                          <input type="text" class="form-control" id="Surname" placeholder="Surname" name="surName"  formControlName="lastName" [class.is-invalid]="lastName.invalid && lastName.touched" >
+                        </div>
+                        <div class="col-12">
+                          <input type="text" class="form-control" id="phoneNo" placeholder="Phone Number" name="phoneNo" formControlName="phoneNo"  [class.is-invalid]="phoneNo.invalid && phoneNo.touched" pattern="^[1-9]{1}[0-9]{9}">
+                        </div>
+                        <div class="col-12  ">
+                          <input type="password" class="form-control" id="password" placeholder="Password" name="password" formControlName="password"  [class.is-invalid]="password.invalid && password.touched">
+                        </div>
+            
+                        <div class="col-12">Date of Birth 
+                            <button><i class="fa-solid fa-question"></i></button>
+                            <!-- <div id="dobMessage" [class.d-none]=""><b>Providing your birthday</b> helps make sure that you get the right Facebook experience for your age. If you want to change who sees this, go to the About section of your profile. For more details, please visit our Privacy Policy</div> -->
+                        </div>
+
+                        <div class=" row "  >
+                            <div class="col-md-4 date  "> 
+                            <select  class="form-control "  name="date" formControlName="date" [class.is-invalid]="date.invalid && date.touched">
+                                <option value="" disabled > dd</option>  
+                                <option *ngFor="let x of createDate()"> {{x}}</option>
+                                <!-- <option *ngFor="let x of createDate();let i=index"> {{i+1}}</option> -->
+                            </select> 
+                            </div>
+                            
+                            <div class="col-md-4 date"> 
+                            <select class="form-control  "  name="month" formControlName="month"  [class.is-invalid]="month.invalid && month.touched">  
+                                <option value="" disabled> mm</option> 
+                                <option *ngFor="let x of months" >{{x}}</option>  
+                            </select> 
+                            </div>
+ 
+                            <div class="col-md-4 date "> 
+                            <select class="form-control "  name="year" formControlName="year"  [class.is-invalid]="year.invalid && year.touched">  
+                                <option value="" disabled> yy</option>  
+                                <option *ngFor="let x of createYear()" >{{x}}</option>  
+                                <!-- <option *ngFor="let x of createYear();let i=index" >{{i+1995}}</option> -->
+                            </select> 
+                            </div>
+                        </div> 
+ 
+
+                        <div class="col-12">Gender<button><i class="fa-solid fa-question  "></i></button></div>
+                        <div class="row " >
+                            <div class="col-md-4 gender divBorder " >
+                                <div>Female</div>
+                                <input type="radio" name="gender" value="female" id="female" formControlName="gender">
+                            </div>
+                            <div class="col-md-4  gender divBorder ">
+                                <div>Male</div>
+                                <input type="radio" name="gender" value="male" id="male" formControlName="gender" >
+                            </div>
+                            <div class="col-md-4  gender divBorder  ">
+                                <div>custom</div>
+                                <input type="radio" name="gender" value="custom" id="custom" formControlName="gender" >
+                            </div>
+                        </div> 
+
+                        <p>People who use our service may have uploaded your contact information to Facebook. Learn more.<br>By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS notifications from us and can opt out at any time.</p>
+
+                        <button id="signUp" type="submit" (click)="onSubmit()" ><b>Sign up</b></button><br>
+                        <button id="account" type="submit" (click)="logIn()">Already have an account?</button>
+    
+                    </form>   
+                </div>
+            </div>
+        </div>
+    <div class="col-12 container-25"></div>
+</div> 
+

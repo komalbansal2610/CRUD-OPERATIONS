@@ -1,0 +1,36 @@
+
+<div id="container">
+<div id="logInBox">
+    <h2>Log In</h2>
+<form [formGroup]="logInForm">
+
+        <div class="row g-3">
+            <div class="col-md-12">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="text" class="form-control" formControlName="phone" id="phone" [class.is-invalid]="phone.invalid && phone.touched" pattern="^[1-9]{1}[0-9]{9}$" >
+            </div>
+            <div class="col-md-12">
+              <label for="password" class="form-label">Password </label>
+              <div id="pass">
+                <input  [type]="fieldTextType ? 'text' : 'password'" class="form-control" formControlName="password" id="password" [class.is-invalid]="password.invalid && password.touched ">
+                  <i
+                    class="fa"
+                    [ngClass]="{
+                      'fa-eye-slash': !fieldTextType,
+                      'fa-eye': fieldTextType
+                    }"
+                    (click)="toggleFieldTextType()"
+                    id="eye"
+                  ></i>
+              </div>
+
+            </div>
+            <button id="LogInButton" type="submit" (click)="logIn()"> Login</button>
+        </div>
+</form>
+</div>
+<div class="invalid" *ngIf="showErrorMessage">Invalid Credentials</div>
+</div>
+<p-toast>
+  
+</p-toast>

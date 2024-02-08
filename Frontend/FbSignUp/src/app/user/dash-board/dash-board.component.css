@@ -1,0 +1,27 @@
+#navbar{
+    width:100vw;
+    height:70px;
+    background-color: black !important;
+    display:flex;
+    /* justify-content: space-around; */
+}
+
+#dashboardHeading{
+    color:white;
+    position: relative;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    /* margin-left:20%; */
+    /* right:155px; */
+    align-items: center;
+}
+
+#logOutButton{
+    background-color: white;
+    border-radius: 15px;
+    font-size: large;
+}
+
+
+
+

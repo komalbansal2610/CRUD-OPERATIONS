@@ -1,0 +1,100 @@
+<div class="container-fluid" id="container">
+    <nav class="navbar  fixed-top " id="navbar">
+      <app-sidebar></app-sidebar>
+        <div id="customerHeading">Customer</div>        
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="addCustomer">
+            Add Customer
+        </button>
+    </nav>
+  
+
+<div id="below-navbar"></div>
+    <div id="backtable">
+    <div id="tablebody">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">CUSTOMER ID</th>
+                <th scope="col">NAME</th>
+                <th scope="col">PHONE</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col">ADDRESS</th>
+                <th scope="col">REGISTRATION DATE</th>
+                <th scope="col" >ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let x of customers" >
+                <td>{{x.id}}</td>
+                <td (click)="selectCustomer(x)" style="color: blue; cursor: pointer;">{{x.name}}</td>
+                <td>{{x.phoneNo}}</td>
+                <td>{{x.email}}</td>
+                <td>{{x.address}}</td>
+                <td>{{x.createdAt}}</td>
+            <td><p-button (click)="op.toggle($event)"   id="ActionBtn" (click)="itemMethods(x)"><i id="actionicon" class="fa-solid fa-ellipsis"></i></p-button></td>
+            <p-overlayPanel #op>
+              <div class="actionMsg" >
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="deleteCustomer" (click)="onEdit()">
+                  Edit
+                </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteCD" class="deleteCustomer">
+                  Delete
+                </button>
+              </div>
+            </p-overlayPanel>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">{{isEdit ? 'Update Customer':'Add Customer'}}</h5>
+            </div>
+            <form [formGroup]="CustomerForm">
+            <div class="modal-body">
+                <div class="row g-3">
+                      <div class="col-md-6">
+                      <label for="Name" class="form-label">Name</label>
+                      <input type="text" class="form-control" formControlName="name" id="Name" [class.is-invalid]="name.invalid && name.touched">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" formControlName="email" id="email" [class.is-invalid]="email.invalid && email.touched">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="PhoneNo" class="form-label">Phone Number</label>
+                      <input type="text" class="form-control" formControlName="phone" id="PhoneNo" [class.is-invalid]="phone.invalid && phone.touched">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="address" class="form-label">Address </label>
+                      <input type="text" class="form-control" formControlName="address" id="address" [class.is-invalid]="address.invalid && address.touched">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="tags" class="form-label">Tags </label>
+                        <input type="text" class="form-control" formControlName="tags" id="tags" >
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal"[class.disabled]="CustomerForm.invalid" (click)="onSubmit()">{{isEdit ? 'Update' :'Add'}}</button>
+            </div>
+        </form>
+        </div>
+        </div>
+    </div>
+    <div class="invalid" *ngIf="showUpdateMessage">customer Updated Successfully</div>
+    <div class="invalid" *ngIf="showAddMessage">customer added Successfully</div>
+    
+<div class="modal fade" id="deleteCD" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-body">Delete Customer?</div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+      <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteCustomer()">Confirm</button>
+      </div>
+</div></div></div> 

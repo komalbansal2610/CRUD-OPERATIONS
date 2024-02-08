@@ -1,0 +1,16 @@
+#customerTable{
+    height:50vh;
+    width:80vw;
+    /* border:2px solid lightgray; */
+    align-items: center;
+    padding-left:5%;
+    padding-right:20%;
+    padding-top:3%;
+}
+.table{
+    border:2px solid lightgray;
+}
+#backtable{
+    background-color: rgba(172, 134, 131, 0.1);
+    height:100vh;
+}
